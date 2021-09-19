@@ -39,7 +39,7 @@ public class Funcionario implements Serializable {
     @Email(message = "Insira um e-mail válido")
     private String email;
 
-    @Pattern(regexp = "[0-9]^", message = "Insira apenas números")
+    @Pattern(regexp = "[0-9]+", message = "Insira apenas números")
     private String PIS;
 
     
