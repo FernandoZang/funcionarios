@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -30,6 +31,10 @@ public class Funcionario implements Serializable {
 
     @Size(min = 2, max = 30)
     private String nome;
+    
+    @NotNull(message = "Sobrenome não pode ser nulo")
+    @Size(min = 2, max = 50)
+    private String sobrenome;
     
     @Email(message = "Insira um e-mail válido")
     private String email;
@@ -72,6 +77,15 @@ public class Funcionario implements Serializable {
     public void setPIS(String pIS) {
         PIS = pIS;
     }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+    
     
     
     
