@@ -10,6 +10,12 @@ import org.springframework.security.core.GrantedAuthority;
 @Entity
 public class Regra implements GrantedAuthority {
     
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 752124578034644607L;
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
