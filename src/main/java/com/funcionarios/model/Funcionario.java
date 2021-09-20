@@ -13,9 +13,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
-import lombok.Value;
-
-
 
 @Table
 @Entity
