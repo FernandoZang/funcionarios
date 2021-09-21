@@ -11,7 +11,7 @@
 	<groupId>com.funcionarios</groupId>
 	<artifactId>funcionarios</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>funcionarios</name>
 	<description>Project for managing employes</description>
 	<properties>
