@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.RequestMatcher;
@@ -16,6 +17,9 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    ImplemUserDetailsService userDetailsService;
+    
     //Autorização para os end points
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -37,6 +41,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().withUser("rh").password("1234").roles("RH");
         auth.inMemoryAuthentication().withUser("admin").password("1234").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("guest").password("1234").roles("GUEST");
+//        auth.userDetailsService(userDetailsService)
+//            .passwordEncoder(new BCryptPasswordEncoder());
     }
     
     
